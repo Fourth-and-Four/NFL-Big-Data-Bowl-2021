@@ -1,1 +1,22 @@
-#Staring gitignore
+.DS_Store
+games.csv
+players.csv
+plays.csv
+week1.csv
+week10.csv
+week11.csv
+week12.csv
+week13.csv
+week14.csv
+week15.csv
+week16.csv
+week17.csv
+week2.csv
+week3.csv
+week4.csv
+week5.csv
+week6.csv
+week7.csv
+week8.csv
+week9.csv
+
