@@ -19,4 +19,5 @@ week6.csv
 week7.csv
 week8.csv
 week9.csv
-
+.ipynb_checkpoints/
+__pycache__/
