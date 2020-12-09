@@ -27,7 +27,6 @@ def prep_plays_data():
                                 'SF':15,'NYJ':25,'ARI':16,'NO':12,'BUF':31,'CHI':21,'MIA':30,
                                 'LAC':10,'TEN':29,'SEA':27}, inplace=True)
     df['passResult'].replace({'C': 0,'I' : 1, 'IN' : 1}, inplace=True)
-    df = df.rename(columns = {'typeDropback' : 'QB_under_pressure', 'passResult' : 'pass_stopped'})
     # create a new column that extracts 
     # "(number) RB, (number) TE, (number) WR"
     # and saves it as a temporary column
@@ -70,7 +69,8 @@ def prep_plays_data():
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE_ROLLOUT_RIGHT', 'scramble'))
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE', 'scramble'))
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE_ROLLOUT_LEFT', 'scramble'))
-    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('scramble_ROLLOUT_LEFT', 'scramble'))                                     
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('scramble_ROLLOUT_LEFT', 'scramble'))   
+    df = df.rename(columns = {'typeDropback' : 'QB_under_pressure', 'passResult' : 'pass_stopped'})
     # join all dataframes together
     df = pd.concat([df, teams, formation], axis = 1)
     # drop temporary columns and duplicates
