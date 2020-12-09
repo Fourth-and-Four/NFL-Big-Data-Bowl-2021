@@ -12,7 +12,7 @@ def prep_plays_data():
     # keep only the useful columns for mvp
     df = df[['playDescription', 'quarter', 'down', 'yardsToGo', 'possessionTeam',
              'offenseFormation', 'personnelO', 'defendersInTheBox', 'numberOfPassRushers', 
-             'personnelD', 'typeDropback', 'gameClock', 'absoluteYardlineNumber', 'epa', 'playType']]
+             'personnelD', 'typeDropback', 'gameClock', 'absoluteYardlineNumber', 'epa', 'playType', 'passResult', 'playResult']]
     # filter out any data that is not a pass play
     df = df[df.playType == 'play_type_pass']
     # creates 0 or 1 for tradtional and scramble
@@ -20,6 +20,8 @@ def prep_plays_data():
                                  'SCRAMBLE':1,'DESIGNED_ROLLOUT_RIGHT':0,
                                  'SCRAMBLE_ROLLOUT_LEFT':1,'DESIGNED_ROLLOUT_LEFT':0,
                                  'UNKNOWN':0}, inplace=True)
+    df['passResult'].replace({'C': 0,'I' : 1, 'IN' : 1}, inplace=True)
+    df = df.rename(columns = {'typeDropback' : 'QB_under_pressure', 'passResult' : 'pass_stopped'})
     # create a new column that extracts 
     # "(number) RB, (number) TE, (number) WR"
     # and saves it as a temporary column
@@ -60,6 +62,7 @@ def prep_plays_data():
     df = pd.concat([df, teams, formation], axis = 1)
     # reorder the index and drop the old index
     df = df.reset_index(drop=True)
+    df = df.dropna()
     return df
 
 print("Prep.py Loaded Successfully")
