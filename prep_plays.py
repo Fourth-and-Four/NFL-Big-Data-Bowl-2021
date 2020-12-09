@@ -58,6 +58,15 @@ def prep_plays_data():
     teams = pd.get_dummies(df.possessionTeam)
     # create dummies for offensive formation
     formation = pd.get_dummies(df.offenseFormation)
+    # Classifying traditional and rollouts into normal dropbacks
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('DESIGNED_ROLLOUT_RIGHT', 'normal'))
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('TRADITIONAL', 'normal'))
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('DESIGNED_ROLLOUT_LEFT', 'normal'))
+    # Classifying all scrambles as scrambles
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE_ROLLOUT_RIGHT', 'scramble'))
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE', 'scramble'))
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE_ROLLOUT_LEFT', 'scramble'))
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('scramble_ROLLOUT_LEFT', 'scramble'))                                     
     # join all dataframes together
     df = pd.concat([df, teams, formation], axis = 1)
     # reorder the index and drop the old index
