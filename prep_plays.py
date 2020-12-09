@@ -52,14 +52,14 @@ def prep_plays_data():
     df['LB'] = temp[1].str.replace(r' LB', '')
     # create a new column with the number of DB on the field
     df['DB'] = temp[2].str.replace(r' DB', '')
-    # drop temporary columns and playType
-    df = df.drop(columns = {'personnelO', 'personnelD', 'tempO', 'tempD', 'playType'})
     # create dummies for team names
     teams = pd.get_dummies(df.possessionTeam)
     # create dummies for offensive formation
     formation = pd.get_dummies(df.offenseFormation)
     # join all dataframes together
     df = pd.concat([df, teams, formation], axis = 1)
+    # drop temporary columns and duplicates
+    df = df.drop(columns = {'personnelO', 'personnelD', 'tempO', 'tempD', 'playType', 'possessionTeam', 'offenseFormation'})
     # reorder the index and drop the old index
     df = df.reset_index(drop=True)
     df = df.dropna()
