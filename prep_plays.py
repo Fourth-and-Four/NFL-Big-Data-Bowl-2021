@@ -20,6 +20,12 @@ def prep_plays_data():
                                  'SCRAMBLE':1,'DESIGNED_ROLLOUT_RIGHT':0,
                                  'SCRAMBLE_ROLLOUT_LEFT':1,'DESIGNED_ROLLOUT_LEFT':0,
                                  'UNKNOWN':0}, inplace=True)
+
+    df['possessionTeam'].replace({'PIT':2,'GB':9,'TB':1,'IND':6,'ATL':4,'PHI':7,'NYG':11,'DET':20,
+                                'CLE':14,'MIN':13,'LA':5,'OAK':18,'NE':8,'BAL':22,'CAR':32,
+                                'DAL':23,'CIN':24,'DEN':19,'JAX':26,'KC':3,'HOU':17,'WAS':28,
+                                'SF':15,'NYJ':25,'ARI':16,'NO':12,'BUF':31,'CHI':21,'MIA':30,
+                                'LAC':10,'TEN':29,'SEA':27}, inplace=True)
     df['passResult'].replace({'C': 0,'I' : 1, 'IN' : 1}, inplace=True)
     df = df.rename(columns = {'typeDropback' : 'QB_under_pressure', 'passResult' : 'pass_stopped'})
     # create a new column that extracts 
