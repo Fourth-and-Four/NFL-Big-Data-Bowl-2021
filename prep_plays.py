@@ -15,6 +15,11 @@ def prep_plays_data():
              'personnelD', 'typeDropback', 'gameClock', 'absoluteYardlineNumber', 'epa', 'playType']]
     # filter out any data that is not a pass play
     df = df[df.playType == 'play_type_pass']
+    # creates 0 or 1 for tradtional and scramble
+    df['typeDropback'].replace({'TRADITIONAL':0,'SCRAMBLE_ROLLOUT_RIGHT':1,
+                                 'SCRAMBLE':1,'DESIGNED_ROLLOUT_RIGHT':0,
+                                 'SCRAMBLE_ROLLOUT_LEFT':1,'DESIGNED_ROLLOUT_LEFT':0,
+                                 'UNKNOWN':0}, inplace=True)
     # create a new column that extracts 
     # "(number) RB, (number) TE, (number) WR"
     # and saves it as a temporary column
@@ -47,6 +52,12 @@ def prep_plays_data():
     df['DB'] = temp[2].str.replace(r' DB', '')
     # drop temporary columns and playType
     df = df.drop(columns = {'personnelO', 'personnelD', 'tempO', 'tempD', 'playType'})
+    # create dummies for team names
+    teams = pd.get_dummies(df.possessionTeam)
+    # create dummies for offensive formation
+    formation = pd.get_dummies(df.offenseFormation)
+    # join all dataframes together
+    df = pd.concat([df, teams, formation], axis = 1)
     # reorder the index and drop the old index
     df = df.reset_index(drop=True)
     return df
