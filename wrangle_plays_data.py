@@ -89,5 +89,5 @@ def min_max_scale(X_train, X_validate, X_test):
 
 
 
-print("wrangle.py functions loaded successfully")
+print("Wrangle.py Loaded Successfully")
 
