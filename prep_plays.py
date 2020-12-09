@@ -57,8 +57,6 @@ def prep_plays_data():
     df['LB'] = temp[1].str.replace(r' LB', '')
     # create a new column with the number of DB on the field
     df['DB'] = temp[2].str.replace(r' DB', '')
-    # create dummies for team names
-    teams = pd.get_dummies(df.possessionTeam)
     # create dummies for offensive formation
     formation = pd.get_dummies(df.offenseFormation)
     # Classifying traditional and rollouts into normal dropbacks
