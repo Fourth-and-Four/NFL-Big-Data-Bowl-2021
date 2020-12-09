@@ -69,29 +69,29 @@ Initial Questions:
 | PHI | 7 |
 | NE | 8 |
 | NYG | 9 |
-| CLE | 0 |
-| IND | 1 |
-| HOU | 2 |
-| SF | 3 |
-| OAK | 4 |
-| CAR | 5 |
-| MIN | 6 |
-| NO | 7 |
-| LAC | 8 |
-| DAL | 9 |
-| DET | 0 |
-| CHI | 1 |
-| CIN | 2 |
-| DEN | 3 |
-| BAL | 4 |
-| JAX | 5 |
-| NYJ | 6 |
-| MIA | 7 |
-| WAS | 8 |
-| TEN | 9 |
-| BUF | 0 |
-| ARI | 1 |
-| SEA |2|
+| CLE | 10 |
+| IND | 11 |
+| HOU | 12 |
+| SF | 13 |
+| OAK | 14 |
+| CAR | 15 |
+| MIN | 16 |
+| NO | 17 |
+| LAC | 18 |
+| DAL | 19 |
+| DET | 20 |
+| CHI | 21 |
+| CIN | 22 |
+| DEN | 23 |
+| BAL | 24 |
+| JAX | 25 |
+| NYJ | 26 |
+| MIA | 27 |
+| WAS | 28 |
+| TEN | 29 |
+| BUF | 30 |
+| ARI | 31 |
+| SEA | 32 |
 
 ## Key Findings
 
