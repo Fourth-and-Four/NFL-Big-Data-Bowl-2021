@@ -12,7 +12,8 @@ def prep_plays_data():
     # keep only the useful columns for mvp
     df = df[['playDescription', 'quarter', 'down', 'yardsToGo', 'possessionTeam',
              'offenseFormation', 'personnelO', 'defendersInTheBox', 'numberOfPassRushers', 
-             'personnelD', 'typeDropback', 'gameClock', 'absoluteYardlineNumber', 'epa', 'playType', 'passResult', 'playResult']]
+             'personnelD', 'typeDropback', 'gameClock', 'absoluteYardlineNumber', 'epa',
+             'playType', 'passResult', 'playResult']]
     # filter out any data that is not a pass play
     df = df[df.playType == 'play_type_pass']
     # creates 0 or 1 for tradtional and scramble
@@ -70,9 +71,9 @@ def prep_plays_data():
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('scramble_ROLLOUT_LEFT', 'scramble'))   
     df = df.rename(columns = {'typeDropback' : 'QB_under_pressure', 'passResult' : 'pass_stopped'})
     # join all dataframes together
-    df = pd.concat([df, teams, formation], axis = 1)
+    df = pd.concat([df, formation], axis = 1)
     # drop temporary columns and duplicates
-    df = df.drop(columns = {'personnelO', 'personnelD', 'tempO', 'tempD', 'playType', 'possessionTeam', 'offenseFormation'})
+    df = df.drop(columns = {'personnelO', 'personnelD', 'tempO', 'tempD', 'playType', 'offenseFormation'})
     # reorder the index and drop the old index
     df = df.reset_index(drop=True)
     df = df.dropna()
