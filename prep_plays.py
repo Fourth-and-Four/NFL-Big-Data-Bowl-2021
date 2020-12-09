@@ -23,11 +23,12 @@ def prep_plays_data():
                                  'SCRAMBLE_ROLLOUT_LEFT':1,'DESIGNED_ROLLOUT_LEFT':0,
                                  'UNKNOWN':0}, inplace=True)
     # ranking the teams with the most cumulative passing yards
-    df['possessionTeam'].replace({'PIT':2,'GB':9,'TB':1,'IND':6,'ATL':4,'PHI':7,'NYG':11,'DET':20,
-                                'CLE':14,'MIN':13,'LA':5,'OAK':18,'NE':8,'BAL':22,'CAR':32,
-                                'DAL':23,'CIN':24,'DEN':19,'JAX':26,'KC':3,'HOU':17,'WAS':28,
-                                'SF':15,'NYJ':25,'ARI':16,'NO':12,'BUF':31,'CHI':21,'MIA':30,
-                                'LAC':10,'TEN':29,'SEA':27}, inplace=True)
+    df['possessionTeam'].replace({'TB': 1, 'PIT': 2, 'KC': 3, 'ATL': 4, 'LA': 5, 'GB': 6, 'PHI': 7,
+                                  'NE': 8, 'NYG': 9, 'CLE': 10, 'IND': 11, 'HOU': 12, 'SF': 13, 'OAK': 14,
+                                  'CAR': 15, 'MIN': 16, 'NO': 17, 'LAC': 18, 'DAL': 19, 'DET': 20, 'CHI': 21,
+                                  'CIN': 22, 'DEN': 23, 'BAL': 24, 'JAX': 25, 'NYJ': 26, 'MIA': 27, 'WAS': 28,
+                                  'TEN': 29, 'BUF': 30, 'ARI': 31, 'SEA': 32}, inplace=True)  
+    
     # cleaning up the pass result column to only pass complete and pass incomplete
     df['passResult'].replace({'C': 0,'I' : 1, 'IN' : 1}, inplace=True)
     # create a new column that extracts 
@@ -71,7 +72,7 @@ def prep_plays_data():
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE', 'scramble'))
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE_ROLLOUT_LEFT', 'scramble'))
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('scramble_ROLLOUT_LEFT', 'scramble'))   
-    df = df.rename(columns = {'typeDropback' : 'QB_under_pressure', 'passResult' : 'pass_stopped'})
+    df = df.rename(columns = {'typeDropback' : 'QB_under_pressure', 'passResult' : 'pass_stopped', 'possessionTeam': 'team_by_comp_yds'})
     # join all dataframes together
     df = pd.concat([df, formation], axis = 1)
     # drop temporary columns and duplicates
