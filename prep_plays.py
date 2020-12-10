@@ -136,7 +136,7 @@ def explore_plays_data():
 #                                   'TEN': 29, 'BUF': 31, 'ARI': 32, 'SEA': 30}, inplace=True)  
     
     # cleaning up the pass result column to only pass complete and pass incomplete
-    df['passResult'].replace({'C': 0,'I' : 1, 'IN' : 1}, inplace=True)
+    df['pass_stopped'].replace({'C': 0,'I' : 1, 'IN' : 1}, inplace=True)
     # create a new column that extracts 
     # "(number) RB, (number) TE, (number) WR"
     # and saves it as a temporary column
