@@ -23,11 +23,11 @@ def prep_plays_data():
                                  'SCRAMBLE_ROLLOUT_LEFT':1,'DESIGNED_ROLLOUT_LEFT':0,
                                  'UNKNOWN':0}, inplace=True)
     # ranking the teams with the most cumulative passing yards
-    df['possessionTeam'].replace({'TB': 1, 'PIT': 2, 'KC': 3, 'ATL': 4, 'LA': 5, 'GB': 6, 'PHI': 7,
-                                  'NE': 8, 'NYG': 9, 'CLE': 10, 'IND': 11, 'HOU': 12, 'SF': 13, 'OAK': 14,
-                                  'CAR': 15, 'MIN': 16, 'NO': 17, 'LAC': 18, 'DAL': 19, 'DET': 20, 'CHI': 21,
-                                  'CIN': 22, 'DEN': 23, 'BAL': 24, 'JAX': 25, 'NYJ': 26, 'MIA': 27, 'WAS': 28,
-                                  'TEN': 29, 'BUF': 30, 'ARI': 31, 'SEA': 32}, inplace=True)  
+    df['possessionTeam'].replace({'TB': 1, 'PIT': 2, 'KC': 4, 'ATL': 3, 'LA': 5, 'GB': 7, 'PHI': 8,
+                                  'NE': 9, 'NYG': 10, 'CLE': 11, 'IND': 6, 'HOU': 12, 'SF': 17, 'OAK': 16,
+                                  'CAR': 15, 'MIN': 14, 'NO': 13, 'LAC': 19, 'DAL': 18, 'DET': 20, 'CHI': 22,
+                                  'CIN': 24, 'DEN': 23, 'BAL': 21, 'JAX': 25, 'NYJ': 26, 'MIA': 28, 'WAS': 27,
+                                  'TEN': 29, 'BUF': 31, 'ARI': 32, 'SEA': 30}, inplace=True)  
     
     # cleaning up the pass result column to only pass complete and pass incomplete
     df['passResult'].replace({'C': 0,'I' : 1, 'IN' : 1}, inplace=True)
@@ -90,3 +90,19 @@ def prep_plays_data():
     return df
 
 print("Prep.py Loaded Successfully")
+
+
+
+### Function for returning Passing Team Rank
+
+def passing_team_rank():
+    # brings in the plays csv
+    plays = pd.read_csv('plays.csv')
+    # returns only pass plays
+    plays = plays[plays.playType == 'play_type_pass']
+    # groups by team and sums the offense play result regardless of penalties
+    team_rank = plays.groupby('possessionTeam')['offensePlayResult'].sum().reset_index()
+    # sorts the summed results from highest to lowest
+    team_rank = team_rank.sort_values(by='offensePlayResult', ascending=False)
+    # returns the team rank
+    return team_rank
