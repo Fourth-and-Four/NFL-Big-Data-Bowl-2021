@@ -121,6 +121,9 @@ def explore_plays_data():
              'offenseFormation', 'personnelO', 'defendersInTheBox', 'numberOfPassRushers', 
              'personnelD', 'typeDropback', 'gameClock', 'absoluteYardlineNumber', 'epa',
              'playType', 'passResult', 'playResult']]
+    df = df.rename(columns = {'typeDropback' : 'QB_under_pressure', 'passResult' : 'pass_stopped', 'possessionTeam': 'team_by_comp_yds'})
+    # cleaning up the pass result column to only pass complete and pass incomplete
+    df['pass_stopped'].replace({'C': 0,'I' : 1, 'IN' : 1}, inplace=True)         
     # filter out any data that is not a pass play
     df = df[df.playType == 'play_type_pass']
     # creates 0 or 1 for tradtional and scramble
@@ -134,9 +137,6 @@ def explore_plays_data():
 #                                   'CAR': 15, 'MIN': 14, 'NO': 13, 'LAC': 19, 'DAL': 18, 'DET': 20, 'CHI': 22,
 #                                   'CIN': 24, 'DEN': 23, 'BAL': 21, 'JAX': 25, 'NYJ': 26, 'MIA': 28, 'WAS': 27,
 #                                   'TEN': 29, 'BUF': 31, 'ARI': 32, 'SEA': 30}, inplace=True)  
-    
-    # cleaning up the pass result column to only pass complete and pass incomplete
-#     df['passResult'].replace({'C': 0,'I' : 1, 'IN' : 1}, inplace=True)
     # create a new column that extracts 
     # "(number) RB, (number) TE, (number) WR"
     # and saves it as a temporary column
