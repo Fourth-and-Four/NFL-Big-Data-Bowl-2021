@@ -158,8 +158,8 @@ def explore_plays_data():
     df['TE'] = temp[1].str.replace(r' TE', '')
     # create a new column with the number of WR on the field
     df['WR'] = temp[2].str.replace(r' WR', '')
-    create a temporary dataframe containing the personnelD 
-    column split by a comma and space
+    #create a temporary dataframe containing the personnelD 
+    #column split by a comma and space
     temp = df.tempD.str.split(', ', expand = True)
     # create a new column with the number of DL on the field
     df['DL'] = temp[0].str.replace(r' DL', '')
