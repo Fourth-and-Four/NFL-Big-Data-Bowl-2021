@@ -67,9 +67,15 @@ def min_max_scale(X_train, X_validate, X_test):
     '''
     # create the scaler object and fit it to X_train (i.e. identify min and max)
     # if copy = false, inplace row normalization happens and avoids a copy (if the input is already a numpy array).
-    #X_train = X_train.drop(columns= [''])
-    #X_validate = X_validate.drop(columns= [''])
-    #X_test = X_test.drop(columns= [''])
+    X_train = X_train.drop(columns= ['playResult','EMPTY', 'I_FORM', 'JUMBO',
+                                     'PISTOL', 'SHOTGUN', 'SINGLEBACK', 'WILDCAT',
+                                     'RB', 'TE', 'WR'])
+    X_validate = X_validate.drop(columns= ['playResult','EMPTY', 'I_FORM', 'JUMBO',
+                                     'PISTOL', 'SHOTGUN', 'SINGLEBACK', 'WILDCAT',
+                                     'RB', 'TE', 'WR'])
+    X_test = X_test.drop(columns= ['playResult','EMPTY', 'I_FORM', 'JUMBO',
+                                     'PISTOL', 'SHOTGUN', 'SINGLEBACK', 'WILDCAT',
+                                     'RB', 'TE', 'WR'])
     
     scaler = MinMaxScaler(copy = True).fit(X_train)
 
