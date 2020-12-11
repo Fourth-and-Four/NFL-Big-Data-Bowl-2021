@@ -191,8 +191,8 @@ def explore_plays_data():
     df = df.reset_index(drop=True)
     df = df.dropna()
     # split df into test (30%) and train_validate (70%)
-    train_validate, test = train_test_split(df, test_size=.3, random_state=123)
+    train_validate, test = train_test_split(df, test_size=.3, random_state=123, stratify = df.pass_stopped)
 
     # split train_validate off into train (60% of 70% = 42%) and validate (40% of 70% = 28%)
-    train, validate = train_test_split(train_validate, test_size=.4, random_state=123)
+    train, validate = train_test_split(train_validate, test_size=.4, random_state=123, stratify = train_validate.pass_stopped)
     return train, validate, test
