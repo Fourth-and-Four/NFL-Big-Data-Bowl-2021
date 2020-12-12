@@ -49,11 +49,37 @@ Initial Questions:
 
 | Feature | Definition |
 | --- | --- |
-| Pending | Pending |
+| quarter | Game quarter (numeric) |
+| down | Down of play (numeric) |
+| yardsToGo | Distance needed for a first down (numeric) |
+| team_by_comp_yds| Team rank by cumulative passing yards (numeric)|
+| defendersInTheBox | Number of defenders in close proximity to line-of-scrimmage (numeric) |
+| numberOfPassRushers | Number of pass rushers (numeric) |
+| QB_under_pressure |If a quarter back is under pressure (numeric boolean) |
+| absoluteYardlineNumber | Distance from end zone for possession team (numeric) |
+| epa | Expected points added on the play, relative to the offensive team. Expected points is a metric that estimates the average of every next scoring outcome given the play's down, distance, yardline, and time remaining (numeric) |
+| playResult | Net yards gained by the offense, including penalty yardage (numeric) |
+| RB | How many running backs in play (numeric)|
+| TE | How many tight ends in play (numeric) |
+| WR | How many wide recievers in play (numeric) |
+| DL | How many defensive linemen in play (numeric) |
+| LB | How many linebackers in play (numeric) |
+| DB | How many running backs in play (numeric) |
+| EMPTY | Offensensive formation with no running backs in the backfield (numeric boolean)|
+| I_FORM | Offensensive formation with two running backs in the backfield one behind the other (numeric boolean)|
+| JUMBO | Offensensive formation with an extra tight end at the expense of a wide receiver (numeric boolean) |
+| PISTOL | Offensensive formation where QB is in shotgun and a running back behind QB (numeric boolean) |
+| SHOTGUN | Pending |
+| SINGLEBACK | Pending |
+| WILDCAT | Pending |
+| four_three | Pending |
+| three_four | Pending |
+| nickle | Pending |
+| dime | Pending |
 
 | Target | Definition |
 | --- | --- |
-| Pending| Pending|
+| pass_stopped | Pending |
 
 
 
