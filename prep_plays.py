@@ -206,7 +206,7 @@ def filter_nfl_weeks():
         # read a week csv
         df = pd.read_csv('week' + str(i) + '.csv')
         # keep only 5 events from the df
-        df = df[(df.event == 'ball_snap') | (df.event == 'pass_forward') | (df.event == 'pass_outcome_caught') | (df.event == 'pass_outcome_incomplete') | (df.event == 'pass_outcome_interception')]
+        df = df[(df.event == 'pass_forward')]
         # fill null values in position to none
         df.position = df.position.fillna('BALL')
         # reset the index
