@@ -196,3 +196,22 @@ def explore_plays_data():
     # split train_validate off into train (60% of 70% = 42%) and validate (40% of 70% = 28%)
     train, validate = train_test_split(train_validate, test_size=.4, random_state=123, stratify = train_validate.pass_stopped)
     return train, validate, test
+
+
+################################### prep week csv ###########################
+
+def filter_nfl_weeks():
+    
+    for i in range(1,18):
+        # read a week csv
+        df = pd.read_csv('week' + str(i) + '.csv')
+        # keep only 5 events from the df
+        df = df[(df.event == 'ball_snap') | (df.event == 'pass_forward') | (df.event == 'pass_outcome_caught') | (df.event == 'pass_outcome_incomplete') | (df.event == 'pass_outcome_interception')]
+        # fill null values in position to none
+        df.position = df.position.fillna('BALL')
+        # reset the index
+        df.reset_index(drop=True)
+        # save the df as a new csv
+        df.to_csv('week' + str(i) + 'filtered.csv', index=False)
+        # print the week number after you run through the above steps
+        print(f'{i}')
