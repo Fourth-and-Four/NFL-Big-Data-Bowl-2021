@@ -49,13 +49,37 @@ Initial Questions:
 
 | Feature | Definition |
 | --- | --- |
-| Pending | Pending |
+| quarter | Game quarter (numeric) |
+| down | Down of play (numeric) |
+| yardsToGo | Distance needed for a first down (numeric) |
+| team_by_comp_yds| Team rank by cumulative passing yards (numeric)|
+| defendersInTheBox | Number of defenders in close proximity to line-of-scrimmage (numeric) |
+| numberOfPassRushers | Number of pass rushers (numeric) |
+| QB_under_pressure |If a quarter back is under pressure (numeric boolean) |
+| absoluteYardlineNumber | Distance from end zone for possession team (numeric) |
+| epa | Expected points added on the play, relative to the offensive team. Expected points is a metric that estimates the average of every next scoring outcome given the play's down, distance, yardline, and time remaining (numeric) |
+| playResult | Net yards gained by the offense, including penalty yardage (numeric) |
+| RB | How many running backs in play (numeric)|
+| TE | How many tight ends in play (numeric) |
+| WR | How many wide receivers in play (numeric) |
+| DL | How many defensive linemen in play (numeric) |
+| LB | How many linebackers in play (numeric) |
+| DB | How many running backs in play (numeric) |
+| EMPTY | Offensive formation with no running backs in the backfield (numeric boolean)|
+| I_FORM | Offensive formation with two running backs in the backfield one behind the other (numeric boolean)|
+| JUMBO | Offensive formation with an extra tight end at the expense of a wide receiver (numeric boolean) |
+| PISTOL | Offensive formation where quarterback is in shotgun and a running back behind quarterback (numeric boolean) |
+| SHOTGUN | Offensive formation where quarterback is 5-7 yards behind center (numeric boolean) |
+| SINGLEBACK | Offensive formation where there is a single running back (numeric boolean) |
+| WILDCAT | Offensive formation where the football is snapped to a player other than the quarterback (numeric boolean) |
+| four_three | Defensive formation where there are four defensive linemen and three linebackers (numeric boolean) |
+| three_four | Defensive formation where there are three defensive linemen and four linebackers (numeric boolean) |
+| nickel | Defensive formation where there are five defensive backs (numeric boolean) |
+| dime | Defensive formation where there are six defensive backs (numeric boolean) |
 
 | Target | Definition |
 | --- | --- |
-| Pending| Pending|
-
-
+| pass_stopped | Whether a pass is completed or incomplete including interceptions (numeric boolean) |
 
 ## Teams By Completed Passing Yards
 | Team | Ranknig By Passing Yards Completed |
