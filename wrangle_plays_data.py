@@ -67,16 +67,12 @@ def min_max_scale(X_train, X_validate, X_test):
     '''
     # create the scaler object and fit it to X_train (i.e. identify min and max)
     # if copy = false, inplace row normalization happens and avoids a copy (if the input is already a numpy array).
-    X_train = X_train.drop(columns= ['playResult','EMPTY', 'I_FORM', 'JUMBO',
-                                     'PISTOL', 'SHOTGUN', 'SINGLEBACK', 'WILDCAT',
-                                     'RB', 'TE', 'WR'])
-    X_validate = X_validate.drop(columns= ['playResult','EMPTY', 'I_FORM', 'JUMBO',
-                                     'PISTOL', 'SHOTGUN', 'SINGLEBACK', 'WILDCAT',
-                                     'RB', 'TE', 'WR'])
-    X_test = X_test.drop(columns= ['playResult','EMPTY', 'I_FORM', 'JUMBO',
-                                     'PISTOL', 'SHOTGUN', 'SINGLEBACK', 'WILDCAT',
-                                     'RB', 'TE', 'WR'])
-    
+    X_train = X_train[['quarter', 'yardsToGo', 'defendersInTheBox', 'numberOfPassRushers',
+                       'QB_under_pressure', 'epa', 'DL', 'DB', 'four_three']]
+    X_validate = X_validate[['quarter', 'yardsToGo', 'defendersInTheBox', 'numberOfPassRushers',
+                       'QB_under_pressure', 'epa', 'DL', 'DB', 'four_three']]
+    X_test = X_test[['quarter', 'yardsToGo', 'defendersInTheBox', 'numberOfPassRushers',
+                       'QB_under_pressure', 'epa', 'DL', 'DB', 'four_three']]
     scaler = MinMaxScaler(copy = True).fit(X_train)
 
     X_train_scaled = scaler.transform(X_train)
