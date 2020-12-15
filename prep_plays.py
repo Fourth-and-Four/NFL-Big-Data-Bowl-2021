@@ -68,7 +68,6 @@ def prep_plays_data():
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('DESIGNED_ROLLOUT_RIGHT', 'normal'))
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('TRADITIONAL', 'normal'))
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('DESIGNED_ROLLOUT_LEFT', 'normal'))
-    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('UNKNOWN', 'normal'))
     # Classifying all scrambles as scrambles
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE_ROLLOUT_RIGHT', 'scramble'))
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE', 'scramble'))
@@ -122,32 +121,16 @@ def explore_plays_data():
              'offenseFormation', 'personnelO', 'defendersInTheBox', 'numberOfPassRushers', 
              'personnelD', 'typeDropback', 'gameClock', 'absoluteYardlineNumber', 'epa',
              'playType', 'passResult', 'playResult']]
-    # Classifying traditional and rollouts into normal dropbacks
-    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('DESIGNED_ROLLOUT_RIGHT', 'normal'))
-    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('TRADITIONAL', 'normal'))
-    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('DESIGNED_ROLLOUT_LEFT', 'normal'))
-    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('UNKNOWN', 'normal'))
-    # Classifying all scrambles as scrambles
-    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE_ROLLOUT_RIGHT', 'scramble'))
-    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE', 'scramble'))
-    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE_ROLLOUT_LEFT', 'scramble'))
-    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('scramble_ROLLOUT_LEFT', 'scramble'))   
+    # creates 0 or 1 for tradtional and scramble
+    df['typeDropback'].replace({'TRADITIONAL':0,'SCRAMBLE_ROLLOUT_RIGHT':1,
+                                 'SCRAMBLE':1,'DESIGNED_ROLLOUT_RIGHT':0,
+                                 'SCRAMBLE_ROLLOUT_LEFT':1,'DESIGNED_ROLLOUT_LEFT':0,
+                                 'UNKNOWN':0}, inplace=True)
     df = df.rename(columns = {'typeDropback' : 'QB_under_pressure', 'passResult' : 'pass_stopped', 'possessionTeam': 'team_by_comp_yds'})
     # cleaning up the pass result column to only pass complete and pass incomplete
     df['pass_stopped'].replace({'C': 0,'I' : 1, 'IN' : 1}, inplace=True)         
     # filter out any data that is not a pass play
     df = df[df.playType == 'play_type_pass']
-    # creates 0 or 1 for tradtional and scramble
-#     df['typeDropback'].replace({'TRADITIONAL':0,'SCRAMBLE_ROLLOUT_RIGHT':1,
-#                                  'SCRAMBLE':1,'DESIGNED_ROLLOUT_RIGHT':0,
-#                                  'SCRAMBLE_ROLLOUT_LEFT':1,'DESIGNED_ROLLOUT_LEFT':0,
-#                                  'UNKNOWN':0}, inplace=True)
-    # ranking the teams with the most cumulative passing yards
-#     df['possessionTeam'].replace({'TB': 1, 'PIT': 2, 'KC': 4, 'ATL': 3, 'LA': 5, 'GB': 7, 'PHI': 8,
-#                                   'NE': 9, 'NYG': 10, 'CLE': 11, 'IND': 6, 'HOU': 12, 'SF': 17, 'OAK': 16,
-#                                   'CAR': 15, 'MIN': 14, 'NO': 13, 'LAC': 19, 'DAL': 18, 'DET': 20, 'CHI': 22,
-#                                   'CIN': 24, 'DEN': 23, 'BAL': 21, 'JAX': 25, 'NYJ': 26, 'MIA': 28, 'WAS': 27,
-#                                   'TEN': 29, 'BUF': 31, 'ARI': 32, 'SEA': 30}, inplace=True)  
     # create a new column that extracts 
     # "(number) RB, (number) TE, (number) WR"
     # and saves it as a temporary column
@@ -178,19 +161,9 @@ def explore_plays_data():
     df['LB'] = temp[1].str.replace(r' LB', '')
     # create a new column with the number of DB on the field
     df['DB'] = temp[2].str.replace(r' DB', '')
-
-    df = df.rename(columns = {'typeDropback' : 'QB_under_pressure', 'passResult' : 'pass_stopped', 'possessionTeam': 'team_by_comp_yds'})
+    
     # drop temporary columns and duplicates
     df = df.drop(columns = {'tempO', 'tempD'})
-    # reorder the index and drop the old index
-    # Changing datatype from object to int
-#     df = df.astype({'DL':'int', 'LB':'int','DB':'int'})
-    # crreating formation columns
-#     df['four_three'] = np.where((df['DL'] == 4) & (df['LB'] == 3),1,0)
-#     df['three_four'] = np.where((df['DL'] == 3) & (df['LB'] == 4),1,0)
-#     df['nickel'] = np.where(df['DB'] == 5, 1, 0)
-#     df['dime'] = np.where(df['DB'] == 6, 1, 0)
-
     df = df.reset_index(drop=True)
     df = df.dropna()
     # split df into test (30%) and train_validate (70%)
