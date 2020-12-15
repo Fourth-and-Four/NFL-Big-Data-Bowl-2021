@@ -68,6 +68,7 @@ def prep_plays_data():
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('DESIGNED_ROLLOUT_RIGHT', 'normal'))
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('TRADITIONAL', 'normal'))
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('DESIGNED_ROLLOUT_LEFT', 'normal'))
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('UNKNOWN', 'normal'))
     # Classifying all scrambles as scrambles
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE_ROLLOUT_RIGHT', 'scramble'))
     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE', 'scramble'))
@@ -121,6 +122,16 @@ def explore_plays_data():
              'offenseFormation', 'personnelO', 'defendersInTheBox', 'numberOfPassRushers', 
              'personnelD', 'typeDropback', 'gameClock', 'absoluteYardlineNumber', 'epa',
              'playType', 'passResult', 'playResult']]
+    # Classifying traditional and rollouts into normal dropbacks
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('DESIGNED_ROLLOUT_RIGHT', 'normal'))
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('TRADITIONAL', 'normal'))
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('DESIGNED_ROLLOUT_LEFT', 'normal'))
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('UNKNOWN', 'normal'))
+    # Classifying all scrambles as scrambles
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE_ROLLOUT_RIGHT', 'scramble'))
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE', 'scramble'))
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE_ROLLOUT_LEFT', 'scramble'))
+    df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('scramble_ROLLOUT_LEFT', 'scramble'))   
     df = df.rename(columns = {'typeDropback' : 'QB_under_pressure', 'passResult' : 'pass_stopped', 'possessionTeam': 'team_by_comp_yds'})
     # cleaning up the pass result column to only pass complete and pass incomplete
     df['pass_stopped'].replace({'C': 0,'I' : 1, 'IN' : 1}, inplace=True)         
@@ -167,16 +178,8 @@ def explore_plays_data():
     df['LB'] = temp[1].str.replace(r' LB', '')
     # create a new column with the number of DB on the field
     df['DB'] = temp[2].str.replace(r' DB', '')
-    # Classifying traditional and rollouts into normal dropbacks
-#     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('DESIGNED_ROLLOUT_RIGHT', 'normal'))
-#     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('TRADITIONAL', 'normal'))
-#     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('DESIGNED_ROLLOUT_LEFT', 'normal'))
-#     # Classifying all scrambles as scrambles
-#     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE_ROLLOUT_RIGHT', 'scramble'))
-#     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE', 'scramble'))
-#     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('SCRAMBLE_ROLLOUT_LEFT', 'scramble'))
-#     df.typeDropback = df.typeDropback.apply(lambda value : str(value).replace('scramble_ROLLOUT_LEFT', 'scramble'))   
-#     df = df.rename(columns = {'typeDropback' : 'QB_under_pressure', 'passResult' : 'pass_stopped', 'possessionTeam': 'team_by_comp_yds'})
+
+    df = df.rename(columns = {'typeDropback' : 'QB_under_pressure', 'passResult' : 'pass_stopped', 'possessionTeam': 'team_by_comp_yds'})
     # drop temporary columns and duplicates
     df = df.drop(columns = {'tempO', 'tempD'})
     # reorder the index and drop the old index
