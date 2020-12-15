@@ -188,6 +188,12 @@ def prep_season():
     df.drop(df.index[df['event'] == 'qb_strip_sack'], inplace = True)
     df.drop(df.index[df['event'] == 'timeout_home'], inplace = True)
     df.drop(df.index[df['event'] == 'qb_sack'], inplace = True)
+    df.drop(df.index[df['event'] == 'qb_spike'], inplace = True)
+    df.drop(df.index[df['event'] == 'run'], inplace = True)
+    df.drop(df.index[df['event'] == 'punt_fake'], inplace = True)
+    df.drop(df.index[df['event'] == 'field_goal_fake'], inplace = True)
+    df.drop(df.index[df['event'] == 'safety'], inplace = True)
+    df.drop(df.index[df['event'] == 'field_goal_play'], inplace = True)
     df['event'].replace({'pass_outcome_caught': 0,'pass_outcome_incomplete' : 1,'pass_outcome_interception' : 1}, inplace=True)
 
     return df
