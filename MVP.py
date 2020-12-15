@@ -46,10 +46,10 @@ def MVP():
     y_pred_proba = rf.predict_proba(X_validate_scaled)
     print('Accuracy of random forest classifier on validate set: {:.2f}'
          .format(rf.score(X_validate_scaled, y_validate)))
-    print('Training Data Matrix')
+    print('Validate Data Matrix')
     print(confusion_matrix(y_validate, y_pred))
     # print report
-    print('Training Data Report')
+    print('Validate Data Report')
     print(classification_report(y_validate, y_pred))
     
     print('---------------------------- Test -------------------------------')
@@ -60,10 +60,10 @@ def MVP():
     y_pred_proba = rf.predict_proba(X_test_scaled)
     print('Accuracy of random forest classifier on validate set: {:.2f}'
          .format(rf.score(X_test_scaled, y_test)))
-    print('Training Data Matrix')
+    print('Test Data Matrix')
     print(confusion_matrix(y_test, y_pred))
     # print report
-    print('Training Data Report')
+    print('Test Data Report')
     print(classification_report(y_test, y_pred))
     
     print('--------------------- Important Features ---------------------------')
