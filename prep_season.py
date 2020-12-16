@@ -69,7 +69,7 @@ def prep_season():
                     week10, week11, week12, week13, week14, week15, week16, week17])
     df = pd.merge(df1, df2, how='inner', on='displayName')
     df = df.drop(columns = {'position_y', 'nflId_y'})
-    df = df.rename(columns = {'position_x':'position', 'nflId_x': 'nflId'})
+    df = df.rename(columns = {'position_x':'position', 'nflId_x': 'nflId', 'event':'pass_stopped'})
         
     df.drop(df.index[df['event'] == 'None'], inplace = True)
     df.drop(df.index[df['event'] == 'ball_snap'], inplace = True)
@@ -135,5 +135,6 @@ def clean_season():
     df = df.drop(columns = {'Unnamed: 0'})
     df.route.fillna(value='NONE', inplace=True)
     df = df.dropna()
+    df = df.rename(columns = {'event':'pass_stopped'})
     return df
 print('Prep_Season.py Loaded Successfully')
