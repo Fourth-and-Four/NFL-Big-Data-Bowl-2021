@@ -111,6 +111,8 @@ def prep_season():
     df.drop(df.index[df['event'] == 'field_goal_play'], inplace = True)
     df['event'].replace({'pass_outcome_caught': 0,'pass_outcome_incomplete' : 1,'pass_outcome_interception' : 1}, inplace=True)
 
+    # Dropping undefined route
+    df.drop(df.index[df['route'] == 'undefined'], inplace =True) 
     # Write DataFrame to csv file for future use
     df.to_csv('season.csv')
     print('CSV Successfully Created')
