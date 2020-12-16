@@ -1,50 +1,41 @@
+<a id='section_6'></a>
+
 <img src="https://cdn.hipwallpaper.com/i/66/61/cb1GgL.jpg" width="1000">
 
-# NFL-Big-Data-Bowl-2021
+<h1 align = "center">NFL-Big-Data-Bowl-2021</h1>
+<p align = "center">Authors: Austin Aranda, George Arredondo, Angel Gomez, Gilbert Noriega</p>
 
-### Authors: Austin Aranda, George Arredondo, Angel Gomez, Gilbert Noriega
+[About the Project](#section_1) || [Data Dictionary](#section_2) ||  [Initial Hypotheses](#section_3) || [Project Plan](#section_4) || [How to Reproduce](#section_5)
 
-## Description: 
-- Pending
+<br>
 
-In addition, I have provided these deliverables:
+<a id='section_1'></a>
+## About the Project: 
+> - Pending
+___
 
-    1. Pending
-    
-    2. Pending
-    
-    3. Pending
+<br>
 
-## Project Planning
+>*Acknowledgement:The dataset was provided by kaggle.com, originally sourced by nextgenstats.nfl.com* 
 
-Initial Questions:
-- Pending
-- Pending
-- Pending
-- Pending
+___
 
+<br>
 
-### Hypotheses:
+## Goals
+> Our goal for this project is to create a classification model that will accuractely predict whether the defense will stop a pass from being completed during the NFL 2018 regular season. We will deliver the following in a github repository: 
+>
+> - A clearly named final notebook. This notebook will be what will contain plenty of markdown documentation and cleaned up code.
+> - A README that explains what the project is, how to reproduce the work, and our notes from project planning
+> - Python modules that automate the data acquisistion, preparation and modeling process. These modules will be imported and used in the final notebook.
 
-#### 1st Hypothesis
+[back to the top](#section_6)
 
-𝐻 0 - Pending
+___
 
-𝐻 a - Pending
+<br>
 
-#### 2nd Hypothesis
-
-𝐻 0 - Pending
-
-𝐻 a - Pending
-
-#### 3rd Hypothesis
-
-𝐻 0 - Pending
-
-𝐻 a - Pending
-
-
+<a id='section_2'></a>
 ## Data Dictionary
 
 | Feature | Definition |
@@ -117,10 +108,108 @@ Initial Questions:
 | ARI | 31 |
 | SEA | 32 |
 
-## Key Findings
+___
 
-- Pending
+<br>
 
-## Takeaways
+<a id='section_3'></a>
+## Initial Hypotheses:
 
-- Pending
+> ### Hypothesis 1: Are passes stopped dependent on Offensive Formation?
+>   - H<sub>0</sub>: There is no dependence between Offensive Formation and pass stopped
+>   - H<sub>a</sub>: There is a dependence between Offensive Formation and pass stopped
+>
+> ### Hypothesis 2: Are passes stopped dependent on Down?
+>   - H<sub>0</sub>: There is no dependence between Down and pass stopped
+>   - H<sub>a</sub>: There is a dependence between Down and pass stopped
+>
+> ### Hypothesis 3: Are passes stopped dependent on QB Pressure?
+>   - H<sub>0</sub>: There is no dependence between QB Pressure and pass stopped
+>   - H<sub>a</sub>: There is no dependence between offensive formation and pass stopped
+>
+> ### Hypothesis 4: Are passes stopped dependent on how many Defenders are In The Box?
+>   - H<sub>0</sub>: There is no dependence between the number of defenders in the box and pass stopped
+>   - H<sub>a</sub>: There is a dependence between the number of defenders in the box and pass stopped
+>
+> ### Hypothesis 5: Are passes stopped dependent on number of DL?
+>   - H<sub>0</sub>: There is no dependence between the number of DL and pass stopped
+>   - H<sub>a</sub>: There is a dependence between the number of DL and pass stopped
+>
+> ### Hypothesis 6: Are passes stopped dependent on number of LB?
+>   - H<sub>0</sub>: There is no dependence between the number of LB and pass stopped
+>   - H<sub>a</sub>: There is a dependence between the number of LB and pass stopped
+>
+> ### Hypothesis 7: Are passes stopped dependent on number of DB?
+>   - H<sub>0</sub>: There is no dependence between the number of DB and pass stopped
+>   - H<sub>a</sub>: There is a dependence between the number of DB and pass stopped
+>
+> ### Hypothesis 8: Are passes stopped dependent on defensive formation(Nickel)?
+>   - H<sub>0</sub>: There is no dependence between Nickel formation and pass stopped
+>   - H<sub>a</sub>: There is a dependence between Nickel formation and pass stopped
+>
+> ### Hypothesis 9: Are passes stopped dependent on defensive formation(Dime)?
+>   - H<sub>0</sub>: There is no dependence between Dime formation and pass stopped
+>   - H<sub>a</sub>: There is a dependence between Dime formation and pass stopped
+>
+> ### Hypothesis 10: Are passes stopped dependent on defensive formation(4-3)?
+>   - H<sub>0</sub>: There is no dependence between 4-3 formation and pass stopped
+>   - H<sub>a</sub>: There is a dependence between 4-3 formation and pass stopped
+>
+> ### Hypothesis 11: Are passes stopped dependent on defensive formation(3-4)?
+>   - H<sub>0</sub>: There is no dependence between 3-4 formation and pass stopped
+>   - H<sub>a</sub>: There is a dependence between 3-4 formation and pass stopped
+
+[back to the top](#section_6)
+___
+
+<br>
+
+<a id='section_4'></a>
+## Project Plan: Breaking it Down
+
+>- acquire
+>    - acquire data from csv
+>    - turn into a pandas dataframe
+>    - summarize the data
+>    - plot distribution
+>
+>- prepare
+>    - address data that could mislead models
+>    - create features
+>    - scale the data
+>    - split into train, validate, test
+>    - create a prepare.py to automate the process
+>
+>- explore
+>    - plot correlation values of all variables
+>    - test each hypothesis
+>    - document and consider the results for modeling
+> 
+>- model and evaluation
+>    - set the baseline
+>    - try different algorithms: LogisticRegression, KNN, Random Forest, Gradient Boost
+>    - evaluate on train
+>    - evaluate on validate
+>    - select best model and test to verify
+>    - create a model.py to automate the process
+>
+>- conclusion
+>    - summarize findings
+>- provide next steps
+
+
+[back to the top](#section_6)
+
+___
+
+<br>
+
+<a id='section_5'></a>
+## How to Reproduce
+
+>1. Download original data csv from [here](insert link)
+>2. Install [prepare.py](insert link), [explore.py](insert link) and [model.py](insert link) into your working directory.
+>3. Run a jupyter notebook importing the necessary libraries and functions.
+>4. Follow along in main_notebook.ipynb or forge your own exploratory path. 
+
+[back to the top](#section_6)
