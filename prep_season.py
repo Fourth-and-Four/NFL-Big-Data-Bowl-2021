@@ -27,6 +27,7 @@ def prep_season():
             return value
     # Changing height column to equal just inches
     players['height'] = players.height.apply(conv_height)
+    players['height'] = players['height'].astype(int)
     
     # Bringing in the week csv's
     df2 = players
@@ -127,6 +128,12 @@ def get_season_data():
     else:
         df = prep_season()
         print('Dataframe Ready For Use')
+    return df
+
+def clean_season():
+    df = get_season_data()
     df = df.drop(columns = {'Unnamed: 0'})
+    df.route.fillna(value='NONE', inplace=True)
+    df = df.dropna()
     return df
 print('Prep_Season.py Loaded Successfully')
