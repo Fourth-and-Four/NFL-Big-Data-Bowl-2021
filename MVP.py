@@ -58,7 +58,7 @@ def MVP():
     y_pred = rf.predict(X_test_scaled)
     # assign probabilities
     y_pred_proba = rf.predict_proba(X_test_scaled)
-    print('Accuracy of random forest classifier on test set: {:.2f}'
+    print('Accuracy of random forest classifier on validate set: {:.2f}'
          .format(rf.score(X_test_scaled, y_test)))
     print('Test Data Matrix')
     print(confusion_matrix(y_test, y_pred))

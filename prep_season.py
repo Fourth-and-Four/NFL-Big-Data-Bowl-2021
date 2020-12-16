@@ -132,8 +132,9 @@ def get_season_data():
 
 def clean_season():
     df = get_season_data()
-    df = df.drop(columns = {'Unnamed: 0'})
     df.route.fillna(value='NONE', inplace=True)
     df = df.dropna()
+    df = df.rename(columns = {'event':'pass_stopped'})
+    df = df.drop(columns = {'Unnamed: 0'})
     return df
 print('Prep_Season.py Loaded Successfully')
