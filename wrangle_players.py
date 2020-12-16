@@ -13,7 +13,7 @@ warnings.filterwarnings("ignore")
 # split_scale 
 # import split_scale
 
-# libraries needed for preparing the data:
+# libraries needed for preparing the data: 
 from sklearn.model_selection import train_test_split
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler, QuantileTransformer, PowerTransformer, RobustScaler, MinMaxScaler
