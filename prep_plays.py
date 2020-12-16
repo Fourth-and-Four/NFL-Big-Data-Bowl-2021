@@ -81,7 +81,7 @@ def prep_plays_data():
     # reorder the index and drop the old index
     # Changing datatype from object to int
     df = df.astype({'DL':'int', 'LB':'int','DB':'int'})
-    # crreating formation columns
+    # creating formation columns
     df['four_three'] = np.where((df['DL'] == 4) & (df['LB'] == 3),1,0)
     df['three_four'] = np.where((df['DL'] == 3) & (df['LB'] == 4),1,0)
     df['nickel'] = np.where(df['DB'] == 5, 1, 0)
@@ -161,6 +161,13 @@ def explore_plays_data():
     df['LB'] = temp[1].str.replace(r' LB', '')
     # create a new column with the number of DB on the field
     df['DB'] = temp[2].str.replace(r' DB', '')
+    # Changing datatype from object to int
+    df = df.astype({'DL':'int', 'LB':'int','DB':'int'})
+    # creating formation columns
+    df['four_three'] = np.where((df['DL'] == 4) & (df['LB'] == 3),1,0)
+    df['three_four'] = np.where((df['DL'] == 3) & (df['LB'] == 4),1,0)
+    df['nickel'] = np.where(df['DB'] == 5, 1, 0)
+    df['dime'] = np.where(df['DB'] == 6, 1, 0)
     
     # drop temporary columns and duplicates
     df = df.drop(columns = {'tempO', 'tempD'})
