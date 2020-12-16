@@ -41,10 +41,9 @@ def explore_train_validate_test(df):
 
         
     # split train into X (dataframe, drop target) & y (series, keep target only)
-    X_train = train.drop(columns= ['pass_stopped'])
-    X_validate = validate.drop(columns= ['pass_stopped'])
-    X_test = test.drop(columns= ['pass_stopped'])
-
+    X_train = train
+    X_validate = validate
+    X_test = test
     y_train = train[['pass_stopped']]
     y_validate = validate[['pass_stopped']]
     y_test = test[['pass_stopped']]
@@ -62,11 +61,11 @@ def explore_train_validate_test(df):
     # create the scaler object and fit it to X_train (i.e. identify min and max)
     # if copy = false, inplace row normalization happens and avoids a copy (if the input is already a numpy array).
     #X_train = X_train[['quarter', 'yardsToGo', 'numberOfPassRushers',
-                       'QB_under_pressure', 'epa', 'DL', 'DB']]
+                       #'QB_under_pressure', 'epa', 'DL', 'DB']]
     #X_validate = X_validate[['quarter', 'yardsToGo', 'numberOfPassRushers',
-                       'QB_under_pressure', 'epa', 'DL', 'DB']]
+                       #'QB_under_pressure', 'epa', 'DL', 'DB']]
     #X_test = X_test[['quarter', 'yardsToGo', 'numberOfPassRushers',
-                       'QB_under_pressure', 'epa', 'DL', 'DB']]
+                       #'QB_under_pressure', 'epa', 'DL', 'DB']]
     #scaler = MinMaxScaler(copy = True).fit(X_train)
 
     #X_train_scaled = scaler.transform(X_train)
