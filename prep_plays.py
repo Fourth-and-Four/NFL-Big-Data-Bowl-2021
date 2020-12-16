@@ -90,8 +90,6 @@ def prep_plays_data():
     df = df.dropna()
     return df
 
-print("Prep.py Loaded Successfully")
-
 
 
 ### Function for returning Passing Team Rank
