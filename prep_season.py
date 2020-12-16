@@ -127,5 +127,6 @@ def get_season_data():
     else:
         df = prep_season()
         print('Dataframe Ready For Use')
+    df = df.drop(columns = {'Unnamed: 0'})
     return df
 print('Prep_Season.py Loaded Successfully')
