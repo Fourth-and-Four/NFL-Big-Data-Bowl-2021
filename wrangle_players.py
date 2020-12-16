@@ -10,7 +10,7 @@ from sklearn.preprocessing import MinMaxScaler, RobustScaler, StandardScaler
 import warnings
 warnings.filterwarnings("ignore")
 
-# split_scale
+# split_scale 
 # import split_scale
 
 # libraries needed for preparing the data:
