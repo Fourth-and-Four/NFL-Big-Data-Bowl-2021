@@ -11,7 +11,7 @@
 
 <a id='section_1'></a>
 ## About the Project: 
-> - Pending
+> - Football is a physical sport that requires true teamwork to win a game. Offense usually gets all the glitz and glamour of scoring while defenses often don't get the credit they deserve. Our Data Science Team ```Fourth and Four``` will dive through the A gap and try to understand what can help defenses stop a completed pass. We will be using the [NFL Big Data Bowl 2021](https://www.kaggle.com/c/nfl-big-data-bowl-2021/overview) data sets to use existing features and engineer features to 
 ___
 
 <br>
