@@ -57,8 +57,6 @@ ___
 | frameId | Frame identifier for each play, starting at 1 (numeric) |
 | gameId | Unique game identifier (numeric)
 | playId | Play identifier that is not unique across games (numeric)
-
-
 | quarter | Game quarter (numeric) |
 | down | Down of play (numeric) |
 | yardsToGo | Distance needed for a first down (numeric) |
@@ -87,9 +85,9 @@ ___
 | nickel | Defensive formation where there are five defensive backs (numeric boolean) |
 | dime | Defensive formation where there are six defensive backs (numeric boolean) |
 
-### Figure 1
-![image](https://user-images.githubusercontent.com/62911364/102547694-30484900-407f-11eb-8ac2-ca584a7df8df.png)
 
+![image](https://user-images.githubusercontent.com/62911364/102547694-30484900-407f-11eb-8ac2-ca584a7df8df.png)
+                                                Figure 1
 | Target | Definition |
 | --- | --- |
 | pass_stopped | Whether a pass is completed or incomplete including interceptions (numeric boolean) |
