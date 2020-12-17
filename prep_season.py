@@ -110,6 +110,7 @@ def prep_season():
     df.drop(df.index[df['event'] == 'safety'], inplace = True)
     df.drop(df.index[df['event'] == 'field_goal_play'], inplace = True)
     df['event'].replace({'pass_outcome_caught': 0,'pass_outcome_incomplete' : 1,'pass_outcome_interception' : 1}, inplace=True)
+    df.reset_index(inplace=True)
 
     # Write DataFrame to csv file for future use
     df.to_csv('season.csv')
@@ -124,9 +125,11 @@ def get_season_data():
     
     if os.path.isfile('season.csv'):
         df = pd.read_csv('season.csv')
+        df = df.drop(columns = {'Unnamed: 0', 'index'})
         print('Dataframe Ready For Use')
     else:
         df = prep_season()
+        df = df.drop(columns = {'index'})
         print('Dataframe Ready For Use')
     return df
 

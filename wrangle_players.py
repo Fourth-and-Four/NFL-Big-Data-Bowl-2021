@@ -22,7 +22,7 @@ import sklearn.preprocessing
 
 
 ##### This is the key function that returns 6 dataframes #####
-def explore_train_validate_test(df):
+def train_validate_test(df):
     '''
     this function takes in a dataframe and splits it into 3 samples, 
     a test, which is 30% of the entire dataframe, 
