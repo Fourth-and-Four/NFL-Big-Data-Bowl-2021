@@ -3,6 +3,7 @@ import numpy as np
 import acquire_plays_data
 import re
 from sklearn.model_selection import train_test_split
+import os
 
 def prep_plays_data():
     '''
@@ -469,4 +470,19 @@ def combine_all_weeks_and_plays():
     plays.drop_duplicates(inplace=True)  
     #merge new features with old
     total_df = pd.merge(plays, df, left_on = 'playid', right_on = 'playid', how = 'inner')
+    total_df.to_csv('final.csv')
     return total_df
+
+def get_weeksnplays_data():
+    
+    ''' This function will acquire the csv file needed to work with the season data, if there is not csv saved,
+    then it ill iterate through the function above and create one for you'''
+    
+    if os.path.isfile('final.csv'):
+        df = pd.read_csv('final.csv')
+        df = df.drop(columns = {'Unnamed: 0'})
+        print('Dataframe Ready For Use')
+    else:
+        df = combine_all_weeks_and_plays()
+        print('Dataframe Ready For Use')
+    return df
