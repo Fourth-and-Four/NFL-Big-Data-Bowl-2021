@@ -70,7 +70,15 @@ def prep_season():
     df = pd.merge(df1, df2, how='inner', on='displayName')
     df = df.drop(columns = {'position_y', 'nflId_y'})
     df = df.rename(columns = {'position_x':'position', 'nflId_x': 'nflId'})
-        
+    
+    # adding columns to measure time taken to travel and force of players
+    df['time_since_last_x'] = (df.dis / df.s).round(4)        
+    # Calculate force by converting the weight to Kg's then divide by gravity (9.81 m/s^2) * acceleration
+    # This will provide a players force in Newtons
+    df['force_per_second'] = (((df.weight * 0.45359237)/ (9.8)) * (df.s / 1.094)).round(4)
+    
+    
+    # replacing the event column with target variable
     df.drop(df.index[df['event'] == 'None'], inplace = True)
     df.drop(df.index[df['event'] == 'ball_snap'], inplace = True)
     df.drop(df.index[df['event'] == 'pass_forward'], inplace = True)
@@ -138,5 +146,11 @@ def clean_season():
     df.route.fillna(value='NONE', inplace=True)
     df = df.dropna()
     df = df.rename(columns = {'event':'pass_stopped'})
+    # 1 is play shifted to left side of field, 0 is play shifted to right side
+    df['playDirection'] = df.playDirection.replace({'left': 1, 'right': 0})
+    df['is_home'] = df.team.replace({'home': 1, 'away': 0})
+    df = df.drop(columns = {'team'})
+    df['time_since_last_x'] = df.time_since_last_x.replace([np.inf, -np.inf], np.nan)
+    df['time_since_last_x'] = df.time_since_last_x.replace([np.inf, -np.inf], np.nan).dropna()
     return df
 print('Prep_Season.py Loaded Successfully')
