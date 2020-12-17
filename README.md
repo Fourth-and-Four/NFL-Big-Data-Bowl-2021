@@ -11,7 +11,7 @@
 
 <a id='section_1'></a>
 ## About the Project: 
-> Football is a physical sport that requires true teamwork to win a game. Offense usually gets all the glitz and glamour of scoring while defenses often don't get the credit they deserve. Our Data Science Team ```Fourth and Four``` will dive through the A gap and try to understand what can help defenses stop a completed pass. We will be using the [NFL Big Data Bowl 2021](https://www.kaggle.com/c/nfl-big-data-bowl-2021/overview) data sets to use existing features and engineer features to 
+> Football is a physical sport that requires true teamwork to win a game. Offense usually gets all the glitz and glamour of scoring while defenses often don't get the credit they deserve. Our Data Science Team ```Fourth and Four``` will dive through the A gap to understand what can help defenses stop a completed pass. We will be using the [NFL Big Data Bowl 2021](https://www.kaggle.com/c/nfl-big-data-bowl-2021/overview) data sets to use existing features and engineer features to create a classification machine learning model that will accurately predict an incomplete pass.
 ___
 
 <br>
@@ -23,11 +23,11 @@ ___
 <br>
 
 ## Goals
-> Our goal for this project is to create a classification model that will accuractely predict whether the defense will stop a pass from being completed during the NFL 2018 regular season. We will deliver the following in a github repository: 
+> Our goal for this project is to use different classification models to accuractely predict a defense stopping a completed pass during the NFL 2018 regular season. We will deliver the following in a github repository: 
 >
-> - A clearly named final notebook. This notebook will be what will contain plenty of markdown documentation and cleaned up code.
-> - A README that explains what the project is, how to reproduce the work, and our notes from project planning
-> - Python modules that automate the data acquisistion, preparation and modeling process. These modules will be imported and used in the final notebook.
+> - A clearly named final notebook. This notebook will contain markdown documentation of what we are doing and the code to accomplish the task.
+> - A README.md that thoroughly explains our project, how to reproduce the work done, and details along the way to help answer what defenses can do to stop a completed pass. 
+> - Python modules that automate the data acquisistion, preparation and modeling processes. These modules will be imported and used in the final notebook.
 
 [back to the top](#section_6)
 
@@ -40,6 +40,8 @@ ___
 
 | Feature | Definition |
 | --- | --- |
+| time | Time stamp of play (time, yyyy-mm-dd, hh:mm:ss)
+| x | Player position along the long axis of the field, 0 - 120 yards. 
 | quarter | Game quarter (numeric) |
 | down | Down of play (numeric) |
 | yardsToGo | Distance needed for a first down (numeric) |
@@ -67,6 +69,8 @@ ___
 | three_four | Defensive formation where there are three defensive linemen and four linebackers (numeric boolean) |
 | nickel | Defensive formation where there are five defensive backs (numeric boolean) |
 | dime | Defensive formation where there are six defensive backs (numeric boolean) |
+
+![image](https://user-images.githubusercontent.com/62911364/102547694-30484900-407f-11eb-8ac2-ca584a7df8df.png)
 
 | Target | Definition |
 | --- | --- |
