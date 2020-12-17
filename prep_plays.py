@@ -15,7 +15,7 @@ def prep_plays_data():
     df = df[['playDescription', 'quarter', 'down', 'yardsToGo', 'possessionTeam',
              'offenseFormation', 'personnelO', 'defendersInTheBox', 'numberOfPassRushers', 
              'personnelD', 'typeDropback', 'gameClock', 'absoluteYardlineNumber', 'epa',
-             'playType', 'passResult', 'playResult']]
+             'playType', 'passResult', 'playResult', 'gameId', 'playId']]
     # filter out any data that is not a pass play
     df = df[df.playType == 'play_type_pass']
     # creates 0 or 1 for tradtional and scramble

@@ -136,11 +136,11 @@ def get_season_data():
     if os.path.isfile('season.csv'):
         df = pd.read_csv('season.csv')
         df = df.drop(columns = {'Unnamed: 0', 'index'})
-        print('Dataframe Ready For Use')
+        print('Season Data Imported Successfully')
     else:
         df = prep_season()
         df = df.drop(columns = {'index'})
-        print('Dataframe Ready For Use')
+        print('Season Data Imported Successfully')
     return df
 
 def clean_season():
