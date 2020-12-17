@@ -22,7 +22,7 @@ def prep_nfl():
     df = df.rename(columns = {'gameId_x': 'gameId','playId_x': 'playId', 'pass_stopped_x': 'pass_stopped'})
     df = df.dropna()
     df3 = prep_plays.get_weeksnplays_data()
-    df3['uniqueId'] = df3.playid.rename({'playid': 'uniqueId'})
+    df3['uniqueId'] = df3.playid.rename({'playid': 'uniqueId'}).astype(int)
     df = pd.merge(df, df3, how='left', on='uniqueId')
     df = df.drop(columns = {'week_y', 'playid', 'playDescription_y', 'quarter_y', 'down_y',
                             'yardsToGo_y', 'team_by_comp_yds_y', 'defendersInTheBox_y',
