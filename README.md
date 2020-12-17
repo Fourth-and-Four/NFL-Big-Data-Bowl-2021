@@ -38,10 +38,25 @@ ___
 <a id='section_2'></a>
 ## Data Dictionary
 
-| Feature | Definition |
+<details>
+  <summary>Dictionary</summary>
+
+| **Feature** | **Definition** |
 | --- | --- |
-| time | Time stamp of play (time, yyyy-mm-dd, hh:mm:ss)
-| x | Player position along the long axis of the field, 0 - 120 yards. 
+| time | Time stamp of play (time, yyyy-mm-dd, hh:mm:ss) |
+| x | Player position along the long axis of the field, 0 - 120 yards. See Figure 1 below. (numeric) |
+| y | Player position along the short axis of the field, 0 - 53.3 yards. See Figure 1 below. (numeric) |
+| s | Speed in yards/second (numeric) |
+| a | Acceleration in yards/second^2 (numeric) |
+| dis | Distance traveled from prior time point, in yards (numeric) |
+| o |  Player orientation (deg), 0 - 360 degrees. See Figure 1 below (numeric)
+| nflId | Player identification number, unique across players (numeric) |
+| displayName | Player name (text) |
+| jerseyNumber | Jersey number of player (numeric) |
+| position | Player position group i.e. QB, RB, WR, LB, CB (text) |
+| frameId | Frame identifier for each play, starting at 1 (numeric) |
+| gameId | Unique game identifier (numeric)
+| playId | Play identifier that is not unique across games (numeric)
 | quarter | Game quarter (numeric) |
 | down | Down of play (numeric) |
 | yardsToGo | Distance needed for a first down (numeric) |
@@ -70,11 +85,14 @@ ___
 | nickel | Defensive formation where there are five defensive backs (numeric boolean) |
 | dime | Defensive formation where there are six defensive backs (numeric boolean) |
 
-![image](https://user-images.githubusercontent.com/62911364/102547694-30484900-407f-11eb-8ac2-ca584a7df8df.png)
 
+![image](https://user-images.githubusercontent.com/62911364/102547694-30484900-407f-11eb-8ac2-ca584a7df8df.png)
+                                                Figure 1
 | Target | Definition |
 | --- | --- |
 | pass_stopped | Whether a pass is completed or incomplete including interceptions (numeric boolean) |
+
+</details>
 
 ## Teams By Completed Passing Yards
 | Team | Ranknig By Passing Yards Completed |
