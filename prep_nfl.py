@@ -27,7 +27,7 @@ def prep_nfl():
     df = df.drop(columns = {'playId_y', 'gameId_y', 'pass_stopped_y'})
     df = df.rename(columns = {'gameId_x': 'gameId','playId_x': 'playId', 'pass_stopped_x': 'pass_stopped'})
     df = df.dropna()
-    df3 = prep_plays.get_weeksnplays_data()
+    df3 = pd.read_csv('final.csv', index_col = [0])
     df3['uniqueId'] = df3.playid.rename({'playid': 'uniqueId'})
     df = pd.merge(df, df3, how='left', on='uniqueId')
     df = df.drop(columns = {'week_y', 'playid', 'playDescription_y', 'quarter_y', 'down_y',
@@ -47,7 +47,7 @@ def prep_nfl():
                               'EMPTY_y': 'EMPTY', 'I_FORM_x': 'I_FORM','JUMBO_x': 'JUMBO', 'PISTOL_x': 'PISTOL',
                               'SHOTGUN_x': 'SHOTGUN', 'SINGLEBACK_x': 'SINGLEBACK', 'WILDCAT_x': 'WILDCAT',
                               'four_three_x': 'four_three', 'three_four_x': 'three_four', 'nickel_x': 'nickel',
-                              'dime_x': 'dime', 'pass_stopped_x': 'pass_stopped', 'epa_x': 'epa', 'gameId_x': 'gameId'})
+                              'dime_x': 'dime', 'pass_stopped_x': 'pass_stopped', 'epa_x': 'epa'})
     df = df.dropna()
     df.to_csv('clean_nfl.csv')
     print('Prep_NFL.py Loaded Successfully')
