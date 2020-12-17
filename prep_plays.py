@@ -24,11 +24,11 @@ def prep_plays_data():
                                  'SCRAMBLE_ROLLOUT_LEFT':1,'DESIGNED_ROLLOUT_LEFT':0,
                                  'UNKNOWN':0}, inplace=True)
     # ranking the teams with the most cumulative passing yards
-    df['possessionTeam'].replace({'TB': 1, 'PIT': 2, 'KC': 4, 'ATL': 3, 'LA': 5, 'GB': 7, 'PHI': 8,
-                                  'NE': 9, 'NYG': 10, 'CLE': 11, 'IND': 6, 'HOU': 12, 'SF': 17, 'OAK': 16,
-                                  'CAR': 15, 'MIN': 14, 'NO': 13, 'LAC': 19, 'DAL': 18, 'DET': 20, 'CHI': 22,
-                                  'CIN': 24, 'DEN': 23, 'BAL': 21, 'JAX': 25, 'NYJ': 26, 'MIA': 28, 'WAS': 27,
-                                  'TEN': 29, 'BUF': 31, 'ARI': 32, 'SEA': 30}, inplace=True)  
+    df['possessionTeam'].replace({'TB': .428528, 'PIT': .417436, 'KC': .392355, 'ATL': .382256, 'LA': .376048, 'GB': .349394, 'PHI': .362307,
+                                  'NE': .358086, 'NYG': .335902, 'CLE': .335819, 'IND': .371082, 'HOU': .316947, 'SF': .303620, 'OAK': .312559,
+                                  'CAR': .314215, 'MIN': .316367, 'NO': .334329, 'LAC': .303868, 'DAL': .295094, 'DET': .303620, 'CHI': .291038,
+                                  'CIN': .273655, 'DEN': .287230, 'BAL': .296998, 'JAX': .259252, 'NYJ': .335902, 'MIA': .243442, 'WAS': .253872,
+                                  'TEN': .246753, 'BUF': .232516, 'ARI': .209504, 'SEA': .234916}, inplace=True)  
     
     # cleaning up the pass result column to only pass complete and pass incomplete
     df['passResult'].replace({'C': 0,'I' : 1, 'IN' : 1}, inplace=True)
