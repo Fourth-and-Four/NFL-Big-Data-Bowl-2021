@@ -22,10 +22,11 @@ def prep_nfl():
     df['force_per_second'] = (((df.weight * 0.45359237)/ (9.8)) * (df.s / 1.094)).round(2)
     df['uniqueId'] = (df.gameId.astype(str) + df.playId.astype(str)).astype(int)
     df2 = prep_plays.prep_plays_data()
+    df = df.rename(columns = {'gameId_x': 'gameId','playId_x': 'playId', 'pass_stopped_x': 'pass_stopped'})
     df2['uniqueId'] = (df2.gameId.astype(str) + df2.playId.astype(str)).astype(int)
     df = pd.merge(df, df2, how='left', on='uniqueId')
     df = df.drop(columns = {'playId_y', 'gameId_y', 'pass_stopped_y'})
-    df = df.rename(columns = {'gameId_x': 'gameId','playId_x': 'playId', 'pass_stopped_x': 'pass_stopped'})
+   
     df = df.dropna()
     df3 = pd.read_csv('final.csv', index_col = [0])
     df3['uniqueId'] = df3.playid.rename({'playid': 'uniqueId'})
@@ -33,7 +34,7 @@ def prep_nfl():
     df = df.drop(columns = {'week_y', 'playid', 'playDescription_y', 'quarter_y', 'down_y',
                             'yardsToGo_y', 'team_by_comp_yds_y', 'defendersInTheBox_y',
                             'numberOfPassRushers_y', 'QB_under_pressure_y', 'gameClock_y',
-                            'absoluteYardlineNumber_y', 'epa_y', 'pass_stopped_y', 'playResult_y',
+                            'absoluteYardlineNumber_y', 'epa_y', 'playResult_y',
                             'RB_y', 'TE_y', 'WR_y', 'DL_y', 'LB_y', 'DB_y', 'EMPTY_y', 'I_FORM_y',
                             'JUMBO_y', 'PISTOL_y', 'SHOTGUN_y', 'SINGLEBACK_y', 'WILDCAT_y',
                             'four_three_y', 'three_four_y', 'nickel_y', 'dime_y'})
