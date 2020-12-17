@@ -152,5 +152,8 @@ def clean_season():
     df = df.drop(columns = {'team'})
     df['time_since_last_x'] = df.time_since_last_x.replace([np.inf, -np.inf], np.nan)
     df['time_since_last_x'] = df.time_since_last_x.replace([np.inf, -np.inf], np.nan).dropna()
+    df['is_defense'] = df.position.replace({'QB': 0, 'SS': 1, 'WR': 0, 'FS': 1, 'RB': 0, 'MLB': 1, 'CB': 1, 'TE': 0,
+                                                 'LB': 1, 'FB': 0, 'OLB': 1,'HB': 0, 'ILB': 1, 'DL': 1, 'DB': 1,
+                                                 'S': 1, 'NT': 1, 'DE': 1, 'P': 0, 'LS': 0, 'K': 0, 'DT': 1})
     return df
 print('Prep_Season.py Loaded Successfully')
