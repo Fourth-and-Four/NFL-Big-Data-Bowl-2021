@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -27,7 +21,7 @@ def prep_nfl():
     df = df.drop(columns = {'playId_y', 'gameId_y', 'pass_stopped_y'})
     df = df.rename(columns = {'gameId_x': 'gameId','playId_x': 'playId', 'pass_stopped_x': 'pass_stopped'})
     df = df.dropna()
-    df3 = pd.read_csv('final.csv', index_col = [0])
+    df3 = prep_plays.get_weeksnplays_data()
     df3['uniqueId'] = df3.playid.rename({'playid': 'uniqueId'})
     df = pd.merge(df, df3, how='left', on='uniqueId')
     df = df.drop(columns = {'week_y', 'playid', 'playDescription_y', 'quarter_y', 'down_y',
