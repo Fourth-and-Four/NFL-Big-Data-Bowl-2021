@@ -104,7 +104,9 @@ ___
 | closest_y | Closest y coordinate to the attended reviver for a pass play (numeric)
 
 ![image](https://user-images.githubusercontent.com/62911364/102547694-30484900-407f-11eb-8ac2-ca584a7df8df.png)
-                                                                                                                     Figure 1
+<p align="right">
+  <b>Figure 1</b><br>
+  
 | Target | Definition |
 | --- | --- |
 | pass_stopped | Whether a pass is completed or incomplete including interceptions (numeric boolean) |
@@ -158,51 +160,52 @@ ___
 <br>
 
 <a id='section_3'></a>
+
 ## Initial Hypotheses:
 
-> ### Hypothesis 1: Are passes stopped dependent on Offensive Formation?
->   - H<sub>0</sub>: There is no dependence between Offensive Formation and pass stopped
->   - H<sub>a</sub>: There is a dependence between Offensive Formation and pass stopped
+> ### Hypothesis 1: Are passes stopped dependent on offensive formation?
+>   - H<sub>0</sub>: There is no dependence between offensive formation and pass stopped.
+>   - H<sub>a</sub>: There is a dependence between offensive formation and pass stopped.
 >
-> ### Hypothesis 2: Are passes stopped dependent on Down?
->   - H<sub>0</sub>: There is no dependence between Down and pass stopped
->   - H<sub>a</sub>: There is a dependence between Down and pass stopped
+> ### Hypothesis 2: Are passes stopped dependent on down?
+>   - H<sub>0</sub>: There is no dependence between down and pass stopped.
+>   - H<sub>a</sub>: There is a dependence between down and pass stopped.
 >
-> ### Hypothesis 3: Are passes stopped dependent on QB Pressure?
->   - H<sub>0</sub>: There is no dependence between QB Pressure and pass stopped
->   - H<sub>a</sub>: There is no dependence between offensive formation and pass stopped
+> ### Hypothesis 3: Are passes stopped dependent on QB pressure?
+>   - H<sub>0</sub>: There is no dependence between QB pressure and pass stopped.
+>   - H<sub>a</sub>: There is a dependence between QB pressure and pass stopped.
 >
-> ### Hypothesis 4: Are passes stopped dependent on how many Defenders are In The Box?
->   - H<sub>0</sub>: There is no dependence between the number of defenders in the box and pass stopped
->   - H<sub>a</sub>: There is a dependence between the number of defenders in the box and pass stopped
+> ### Hypothesis 4: Are passes stopped dependent on how many defenders are in the box?
+>   - H<sub>0</sub>: There is no dependence between the number of defenders in the box and pass stopped.
+>   - H<sub>a</sub>: There is a dependence between the number of defenders in the box and pass stopped.
 >
 > ### Hypothesis 5: Are passes stopped dependent on number of DL?
->   - H<sub>0</sub>: There is no dependence between the number of DL and pass stopped
->   - H<sub>a</sub>: There is a dependence between the number of DL and pass stopped
+>   - H<sub>0</sub>: There is no dependence between the number of DL and pass stopped.
+>   - H<sub>a</sub>: There is a dependence between the number of DL and pass stopped.
 >
 > ### Hypothesis 6: Are passes stopped dependent on number of LB?
->   - H<sub>0</sub>: There is no dependence between the number of LB and pass stopped
->   - H<sub>a</sub>: There is a dependence between the number of LB and pass stopped
+>   - H<sub>0</sub>: There is no dependence between the number of LB and pass stopped.
+>   - H<sub>a</sub>: There is a dependence between the number of LB and pass stopped.
 >
 > ### Hypothesis 7: Are passes stopped dependent on number of DB?
->   - H<sub>0</sub>: There is no dependence between the number of DB and pass stopped
->   - H<sub>a</sub>: There is a dependence between the number of DB and pass stopped
+>   - H<sub>0</sub>: There is no dependence between the number of DB and pass stopped.
+>   - H<sub>a</sub>: There is a dependence between the number of DB and pass stopped.
 >
 > ### Hypothesis 8: Are passes stopped dependent on defensive formation(Nickel)?
->   - H<sub>0</sub>: There is no dependence between Nickel formation and pass stopped
->   - H<sub>a</sub>: There is a dependence between Nickel formation and pass stopped
+>   - H<sub>0</sub>: There is no dependence between Nickel formation and pass stopped.
+>   - H<sub>a</sub>: There is a dependence between Nickel formation and pass stopped.
 >
 > ### Hypothesis 9: Are passes stopped dependent on defensive formation(Dime)?
->   - H<sub>0</sub>: There is no dependence between Dime formation and pass stopped
->   - H<sub>a</sub>: There is a dependence between Dime formation and pass stopped
+>   - H<sub>0</sub>: There is no dependence between Dime formation and pass stopped.
+>   - H<sub>a</sub>: There is a dependence between Dime formation and pass stopped.
 >
 > ### Hypothesis 10: Are passes stopped dependent on defensive formation(4-3)?
->   - H<sub>0</sub>: There is no dependence between 4-3 formation and pass stopped
->   - H<sub>a</sub>: There is a dependence between 4-3 formation and pass stopped
+>   - H<sub>0</sub>: There is no dependence between 4-3 formation and pass stopped.
+>   - H<sub>a</sub>: There is a dependence between 4-3 formation and pass stopped.
 >
 > ### Hypothesis 11: Are passes stopped dependent on defensive formation(3-4)?
->   - H<sub>0</sub>: There is no dependence between 3-4 formation and pass stopped
->   - H<sub>a</sub>: There is a dependence between 3-4 formation and pass stopped
+>   - H<sub>0</sub>: There is no dependence between 3-4 formation and pass stopped.
+>   - H<sub>a</sub>: There is a dependence between 3-4 formation and pass stopped.
 
 [back to the top](#section_6)
 ___
@@ -210,33 +213,36 @@ ___
 <br>
 
 <a id='section_4'></a>
+
 ## Project Plan: Breaking it Down
 
->- acquire
->    - acquire data from csv
->    - turn into a pandas dataframe
->    - summarize the data
->    - plot distribution
+>- Acquire
+>    - Acquire data from csv
+>    - Convert into a pandas dataframe
+>    - Summarize the data
+>    - Plot distribution
+>    - Create a ```acquire_nfl.py``` to automate the process
 >
->- prepare
->    - address data that could mislead models
->    - create features
->    - scale the data
->    - split into train, validate, test
->    - create a prepare.py to automate the process
+>- Prepare
+>    - Handle missing and null values
+>    - Address data that could mislead models
+>    - Create features
+>    - Scale the data
+>    - Split data into train, validate, test
+>    - Create a ```prep_nfl.py``` to automate the process
 >
->- explore
->    - plot correlation values of all variables
->    - test each hypothesis
->    - document and consider the results for modeling
+>- Explore
+>    - Plot correlation values of all variables
+>    - Test each hypothesis
+>    - Document and consider the results for modeling
 > 
->- model and evaluation
->    - set the baseline
->    - try different algorithms: LogisticRegression, KNN, Random Forest, Gradient Boost
->    - evaluate on train
->    - evaluate on validate
->    - select best model and test to verify
->    - create a model.py to automate the process
+>- Model and Evaluation
+>    - Set the baseline
+>    - Model using different Classification algorithms: LogisticRegression, KNN, Random Forest, Gradient Boost
+>    - Evaluate on train
+>    - Evaluate on validate
+>    - Evaluate best model to test
+>    - create a ```model.py``` to automate the process
 >
 >- conclusion
 >    - summarize findings
@@ -250,9 +256,10 @@ ___
 <br>
 
 <a id='section_5'></a>
+
 ## How to Reproduce
 
->1. Download original data csv from [here](insert link)
+>1. Download original data csv from [here](https://www.kaggle.com/c/nfl-big-data-bowl-2021/overview)
 >2. Install [prepare.py](insert link), [explore.py](insert link) and [model.py](insert link) into your working directory.
 >3. Run a jupyter notebook importing the necessary libraries and functions.
 >4. Follow along in main_notebook.ipynb or forge your own exploratory path. 
