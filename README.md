@@ -4,6 +4,7 @@
 
 <h1 align = "center">NFL-Big-Data-Bowl-2021</h1>
 <p align = "center">Authors: Austin Aranda, George Arredondo, Angel Gomez, Gilbert Noriega</p>
+<p align = "center">![image](https://user-images.githubusercontent.com/62911364/102659702-7e248600-413f-11eb-8d68-7f6a003924a0.png)</p>
 
 [About the Project](#section_1) || [Data Dictionary](#section_2) ||  [Initial Hypotheses](#section_3) || [Project Plan](#section_4) || [How to Reproduce](#section_5)
 
