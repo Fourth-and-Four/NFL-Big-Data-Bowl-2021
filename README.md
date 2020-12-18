@@ -148,6 +148,7 @@ ___
 | BUF | 30 |
 | ARI | 31 |
 | SEA | 32 |
+
 </details>
 
 [back to the top](#section_6)
