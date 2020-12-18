@@ -1,5 +1,5 @@
 <a id='section_6'></a>
-
+![b28113087a271ef0f389e5e49cf95c53](https://user-images.githubusercontent.com/62911364/102655731-6bf31980-4138-11eb-9b16-0a5c5aa93b27.gif)
 <img src="https://cdn.hipwallpaper.com/i/66/61/cb1GgL.jpg" width="1000">
 
 <h1 align = "center">NFL-Big-Data-Bowl-2021</h1>
@@ -21,7 +21,7 @@ ___
 ___
 
 <br>
-Video("pick6_1.mp4")
+
 ## Goals
 Our goal for this project is to use different classification models to accurately predict a defense stopping a completed pass during the NFL 2018 regular season. We will deliver the following in a github repository: 
 >
@@ -104,9 +104,7 @@ ___
 | closest_y | Closest y coordinate to the attended reviver for a pass play (numeric)
 
 ![image](https://user-images.githubusercontent.com/62911364/102654734-b1164c00-4136-11eb-875a-39204b957eb4.png)
-<p align="center">
-  <b>Figure 1</b><br>
-</p>
+<<h2 align = "center">NFL-Big-Data-Bowl-2021</h2>
 
 | Target | Definition |
 | --- | --- |
