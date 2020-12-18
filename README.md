@@ -266,12 +266,13 @@ ___
 
 ## Animated Plays
 <<h3 align = "center">New Orleans Touchdown Pass</h3>
-Here 
+Here the linebacker does a great job reading the quarterback to slip in front of the reciever to intercept the pass and take it to the house.
 <p align = "center">
-<img src="https://user-images.githubusercontent.com/62911364/102666270-1b85b700-414c-11eb-8157-447bf69a262f.gif">
+<img src="https://user-images.githubusercontent.com/62911364/102668550-ccdb1b80-4151-11eb-8ca7-a3d3ea6e80d2.gif">
 </p>
 
 <<h3 align = "center">New Orleans Touchdown Pass</h3>
+Here there appears to be a blown coverage on the defense that allows the reciever to get open and score a touchdown.
 <p align = "center">
 <img src="https://user-images.githubusercontent.com/62911364/102667397-dca53080-414e-11eb-91ec-8ac87d5c5738.gif">
 </p>
