@@ -104,9 +104,10 @@ ___
 | closest_y | Closest y coordinate to the attended reviver for a pass play (numeric)
 
 ![image](https://user-images.githubusercontent.com/62911364/102547694-30484900-407f-11eb-8ac2-ca584a7df8df.png)
-<p align="right">
+<p align="center">
   <b>Figure 1</b><br>
-  
+</p>
+
 | Target | Definition |
 | --- | --- |
 | pass_stopped | Whether a pass is completed or incomplete including interceptions (numeric boolean) |
