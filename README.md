@@ -107,7 +107,7 @@ ___
 <p align="center">
   <b>Figure 1</b><br>
 </p>
-
+<img src="http://s.4cdn.org/image/title/105.gif">
 | Target | Definition |
 | --- | --- |
 | pass_stopped | Whether a pass is completed or incomplete including interceptions (numeric boolean) |
