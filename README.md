@@ -21,7 +21,8 @@ ___
 ___
 
 <br>
-<p align = "center">![b28113087a271ef0f389e5e49cf95c53](https://user-images.githubusercontent.com/62911364/102655731-6bf31980-4138-11eb-9b16-0a5c5aa93b27.gif)</p>
+<p align = "center">![b28113087a271ef0f389e5e49cf95c53](https://user-images.githubusercontent.com/62911364/102655731-6bf31980-4138-11eb-9b16-0a5c5aa93b27.gif)
+</p>
 
 ## Goals
 Our goal for this project is to use different classification models to accurately predict a defense stopping a completed pass during the NFL 2018 regular season. We will deliver the following in a github repository: 
