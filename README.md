@@ -7,7 +7,7 @@
 <p align = "center"><img src="https://user-images.githubusercontent.com/62911364/102659702-7e248600-413f-11eb-8d68-7f6a003924a0.png"></p>
 <h2 align = "center">Authors: Austin Aranda, George Arredondo, Angel Gomez, Gilbert Noriega</h2>
 
-<p align = "center">[About the Project](#section_1) || [Data Dictionary](#section_2) ||  [Initial Hypotheses](#section_3) || [Project Plan](#section_4) || [How to Reproduce](#section_5)</p>
+[About the Project](#section_1) || [Data Dictionary](#section_2) ||  [Initial Hypotheses](#section_3) || [Project Plan](#section_4) || [How to Reproduce](#section_5)
 
 <br>
 
@@ -215,6 +215,7 @@ ___
 >   - H<sub>0</sub>: There is no dependence between 3-4 formation and pass stopped.
 >   - H<sub>a</sub>: There is a dependence between 3-4 formation and pass stopped.
 </details>
+
 [back to the top](#section_6)
 ___
 
