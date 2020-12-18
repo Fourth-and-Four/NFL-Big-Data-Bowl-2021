@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 import re
 import os
 
@@ -158,4 +160,46 @@ def clean_season():
                                                  'LB': 1, 'FB': 0, 'OLB': 1,'HB': 0, 'ILB': 1, 'DL': 1, 'DB': 1,
                                                  'S': 1, 'NT': 1, 'DE': 1, 'P': 0, 'LS': 0, 'K': 0, 'DT': 1})
     return df
+
+def get_viz(df):
+    agedf = df.groupby('age')['event'].sum().reset_index()
+    agedf = agedf.sort_values(by='event', ascending=False).head(7)
+    sns.barplot(data=agedf, x='age', y= 'event', palette = 'mako')
+    plt.title('Age and Incompletions', fontsize=13)
+    plt.xlabel('age', fontsize=13)
+    plt.ylabel('Incomplete Passes', fontsize=13)
+    plt.show()
+
+    ### College
+    collegedf = df.groupby('collegeName')['event'].sum().reset_index()
+    college20 = collegedf.sort_values(by='event', ascending=False).head(7)
+    sns.barplot(data=college20, x='collegeName', y= 'event',palette='mako' )
+    plt.title('College and Incompletions', fontsize=13)
+    plt.xlabel('College', fontsize=13)
+    plt.ylabel('Incomplete Passes', fontsize=13)
+    #plt.xticks(rotation=30)
+    plt.show()
+
+    ### Height
+    heightdf = df.groupby('height')['event'].sum().reset_index()
+    heightdf = heightdf.sort_values(by='event', ascending=False).head(7)
+    sns.barplot(data=heightdf, x='height', y= 'event', palette='mako')
+    plt.title('Height and Incompletions', fontsize=13)
+    plt.xlabel('height', fontsize=13)
+    plt.ylabel('Incomplete Passes', fontsize=13)
+    plt.xticks(rotation=30)
+    plt.show()
+
+    ### Weight
+    weightdf = df.groupby('weight')['event'].sum().reset_index()
+    weight20 = weightdf.sort_values(by='event', ascending=False).head(7)
+    sns.barplot(data=weight20, x='weight', y= 'event', palette='mako')
+    plt.title('Weight and Incompletions', fontsize=13)
+    plt.xlabel('Weight', fontsize=13)
+    plt.ylabel('Incomplete Passes', fontsize=13)
+    plt.xticks(rotation=30)
+    plt.show()
+
+
+
 print('Prep_Season.py Loaded Successfully')
