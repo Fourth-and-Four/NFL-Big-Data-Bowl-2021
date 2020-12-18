@@ -1,5 +1,7 @@
 <a id='section_6'></a>
-
+<p align = "center">
+<img src="https://user-images.githubusercontent.com/62911364/102666270-1b85b700-414c-11eb-8157-447bf69a262f.gif">
+</p>
 <img src="https://cdn.hipwallpaper.com/i/66/61/cb1GgL.jpg" width="1000">
 
 <h1 align = "center">NFL-Big-Data-Bowl-2021</h1>
