@@ -103,7 +103,7 @@ ___
 | closest_x | Closest x coordinate to the attended receiver for a pass play (numeric)
 | closest_y | Closest y coordinate to the attended reviver for a pass play (numeric)
 
-![image](https://user-images.githubusercontent.com/62911364/102547694-30484900-407f-11eb-8ac2-ca584a7df8df.png)
+![image](https://user-images.githubusercontent.com/62911364/102654734-b1164c00-4136-11eb-875a-39204b957eb4.png)
 <p align="center">
   <b>Figure 1</b><br>
 </p>
