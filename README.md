@@ -114,7 +114,8 @@ ___
 ## Teams Rank by Total Completed Passing Yards for 2018
 <details>
   <summary>Rank</summary>
-| Team | Rank |
+
+| **Team** | **Rank** |
 | --- | --- |
 | TB | 1 |
 | PIT | 2 |
