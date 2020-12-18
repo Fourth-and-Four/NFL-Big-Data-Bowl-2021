@@ -1,11 +1,6 @@
 <a id='section_6'></a>
-
-<p align = "center">
-<img src="https://user-images.githubusercontent.com/62911364/102666270-1b85b700-414c-11eb-8157-447bf69a262f.gif">
-</p>
-<img src="https://cdn.hipwallpaper.com/i/66/61/cb1GgL.jpg" width="1000">
-
 <h1 align = "center">NFL-Big-Data-Bowl-2021</h1>
+<img src="https://cdn.hipwallpaper.com/i/66/61/cb1GgL.jpg" width="1000">
 
 <p align = "center"><img src="https://user-images.githubusercontent.com/62911364/102659702-7e248600-413f-11eb-8d68-7f6a003924a0.png"></p>
 <h2 align = "center">Authors: Austin Aranda, George Arredondo, Angel Gomez, Gilbert Noriega</h2>
@@ -268,6 +263,10 @@ ___
 <br>
 
 <a id='section_5'></a>
+
+<p align = "center">
+<img src="https://user-images.githubusercontent.com/62911364/102666270-1b85b700-414c-11eb-8157-447bf69a262f.gif">
+</p>
 
 ## How to Reproduce
 
