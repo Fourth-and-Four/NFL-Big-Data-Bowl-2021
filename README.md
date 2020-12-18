@@ -264,8 +264,16 @@ ___
 
 <a id='section_5'></a>
 
+## Animated Plays
+<<h3 align = "center">New Orleans Touchdown Pass</h3>
+Here 
 <p align = "center">
 <img src="https://user-images.githubusercontent.com/62911364/102666270-1b85b700-414c-11eb-8157-447bf69a262f.gif">
+</p>
+
+<<h3 align = "center">New Orleans Touchdown Pass</h3>
+<p align = "center">
+<img src="https://user-images.githubusercontent.com/62911364/102667397-dca53080-414e-11eb-91ec-8ac87d5c5738.gif">
 </p>
 
 ## How to Reproduce
