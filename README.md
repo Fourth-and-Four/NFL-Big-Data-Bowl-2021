@@ -265,7 +265,7 @@ ___
 <a id='section_5'></a>
 
 ## Animated Plays
-<<h3 align = "center">New Orleans Touchdown Pass</h3>
+<<h3 align = "center">San Fransico Interception</h3>
 Here the linebacker does a great job reading the quarterback to slip in front of the reciever to intercept the pass and take it to the house.
 <p align = "center">
 <img src="https://user-images.githubusercontent.com/62911364/102668550-ccdb1b80-4151-11eb-8ca7-a3d3ea6e80d2.gif">
@@ -285,3 +285,4 @@ Here there appears to be a blown coverage on the defense that allows the recieve
 >4. Follow along in main_notebook.ipynb or forge your own exploratory path. 
 
 [back to the top](#section_6)
+

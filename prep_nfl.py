@@ -13,7 +13,7 @@ import os
 
 def prep_nfl():
     df = prep_season.clean_season()
-    df['force_per_second'] = (((df.weight * 0.45359237)/ (9.8)) * (df.s / 1.094)).round(2)
+    df['force_per_second'] = (((df.weight * 0.45359237)/ (9.8)) * (df.a * .9144)).round(2)
     df['uniqueId'] = (df.gameId.astype(str) + df.playId.astype(str)).astype(int)
     df2 = prep_plays.prep_plays_data()
     df2['uniqueId'] = (df2.gameId.astype(str) + df2.playId.astype(str)).astype(int)
