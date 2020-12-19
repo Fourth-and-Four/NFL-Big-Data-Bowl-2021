@@ -38,7 +38,7 @@ def prep_nfl():
                               'gameClock_x': 'gameClock','absoluteYardlineNumber_x': 'absoluteYardlineNumber',
                               'epa_y': 'epa', 'pass_stopped_x': 'pass_stopped', 'playResult_x': 'playResult',
                               'RB_x': 'RB', 'TE_x': 'TE', 'WR_x': 'WR', 'DL_x': 'DL', 'LB_x': 'LB', 'DB_x': 'DB',
-                              'EMPTY_y': 'EMPTY', 'I_FORM_x': 'I_FORM','JUMBO_x': 'JUMBO', 'PISTOL_x': 'PISTOL',
+                              'EMPTY_x': 'EMPTY', 'I_FORM_x': 'I_FORM','JUMBO_x': 'JUMBO', 'PISTOL_x': 'PISTOL',
                               'SHOTGUN_x': 'SHOTGUN', 'SINGLEBACK_x': 'SINGLEBACK', 'WILDCAT_x': 'WILDCAT',
                               'four_three_x': 'four_three', 'three_four_x': 'three_four', 'nickel_x': 'nickel',
                               'dime_x': 'dime', 'pass_stopped_x': 'pass_stopped', 'epa_x': 'epa'})
