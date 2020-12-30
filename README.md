@@ -251,9 +251,20 @@ ___
 >    - Evaluate best model to test
 >    - create a ```model.py``` to automate the process
 >
->- conclusion
->    - summarize findings
->- provide next steps
+>- Conclusions
+>    - Our Random Forest Model was 93% accurate at predicting a pass being stopped.
+>    - EPA & closest_dist turned out to be significant features in our model.
+>    - Success in defending the pass truly depends on the defenders' ability to prevent separation from receiver and their reaction time.
+>    - When pressure is applied to the quarter back, the completion percentage significantly decreases.
+>    - Dime formation (6 defensive backs) had the best success in stopping the pass.
+
+>- Going Foward
+>    - Look into creating new features in our model
+    >    -  Incorporating the best defensive defenders against the pass
+>    - Answer new questions 
+    >    - Does the pass distance increase or decrease the ability for a defender to stop a pass?
+    >    - Does a shorter or longer play influence a pass incompletion?
+
 
 
 [back to the top](#section_6)
@@ -266,7 +277,7 @@ ___
 
 ## Animated Plays
 <<h3 align = "center">San Fransico Interception</h3>
-Here the linebacker does a great job reading the quarterback to slip in front of the reciever to intercept the pass and take it to the house. The line backer was able to keep 
+Here the linebacker does a great job reading the quarterback to slip in front of the receiver to intercept the pass and take it to the house. The line backer was able to keep a close distance to the running back as he approached the line of scrimmage as the pass was thrown.
 <p align = "center">
 <img src="https://user-images.githubusercontent.com/62911364/102668550-ccdb1b80-4151-11eb-8ca7-a3d3ea6e80d2.gif">
 </p>
