@@ -260,10 +260,10 @@ ___
 
 >- Going Foward
 >    - Look into creating new features in our model
-    >    -  Incorporating the best defensive defenders against the pass
+        -  Incorporating the best defensive defenders against the pass
 >    - Answer new questions 
-    >    - Does the pass distance increase or decrease the ability for a defender to stop a pass?
-    >    - Does a shorter or longer play influence a pass incompletion?
+        - Does the pass distance increase or decrease the ability for a defender to stop a pass?
+        - Does a shorter or longer play influence a pass incompletion?
 
 
 
