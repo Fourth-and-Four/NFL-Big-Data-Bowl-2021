@@ -199,6 +199,43 @@ def get_viz(df):
     plt.ylabel('Incomplete Passes', fontsize=13)
     plt.xticks(rotation=30)
     plt.show()
+    
+    
+    
+################################ finding top defenders in NFL ##########################
+
+def top_defenders():
+    '''
+    This function will create a dataframe of the best defenders 
+    in the NFL in regards to defending the intended receiver
+    '''
+    # loading whole dataframe
+    df = prep_plays.get_weeksnplays_data()
+    # top 100 defenders directly involved in a pass play
+    total_plays = df[df.defender_receiver != 'unknown'].defender_receiver.value_counts().head(100)
+    # transform total_plays into a dataframe
+    total_plays = pd.DataFrame(total_plays)
+    # reset index
+    total_plays = total_plays.reset_index()
+    # rename columns
+    total_plays = total_plays.rename(columns = {'index': 'defender', 'defender_receiver': 'total_plays'})
+    # creating a temp df for passes stopped
+    temp = df[df.pass_stopped == 1]
+    #top 10 defenders who were directly involved in stopping the pass play
+    top_10 = temp[temp.defender_receiver != 'unknown'].defender_receiver.value_counts().head(10)
+    # transform top_10 into a dataframe
+    top_10 = pd.DataFrame(top_10)
+    # reset index
+    top_10 = top_10.reset_index()
+    # rename columns
+    top_10 = top_10.rename(columns = {'index': 'defender', 'defender_receiver': 'stopped_passes'})
+    # merging dataframes to find top defenders
+    top_defenders = pd.merge(top_10, total_plays, how= 'inner')
+    # finding precentage of passes stopped
+    top_defenders['stopped_pass_perc'] = (top_defenders.stopped_passes / top_defenders.total_plays).round(2)
+    # sorting values in dataframe
+    defenders = top_defenders.sort_values('stopped_pass_perc', ascending = False)
+    return defenders
 
 
 
